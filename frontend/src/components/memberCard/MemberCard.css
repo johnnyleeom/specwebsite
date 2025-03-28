@@ -1,0 +1,68 @@
+
+.outter-container {
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    opacity: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent; 
+}
+
+.outter-container:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9); 
+    border-color: rgba(255, 255, 255, 0.9); 
+    transform: scale(1.05); 
+
+}
+
+@keyframes glow {
+    0% {
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+.outer-container:hover {
+    animation: glow 1s infinite alternate; 
+    font-size: 30px;
+}
+
+.outter-container img {
+    width: 75%;
+    height: 70%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#name {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#role {
+    margin-top: 0;
+
+}
