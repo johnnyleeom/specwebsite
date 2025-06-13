@@ -78,7 +78,7 @@ html, body {
     font-size: 50px;
     border-bottom: 0px;
     margin-bottom: 0px;
-    font-family: MyCustomFont;
+    font-family: 'MyCustomFont';
 }
 
 @keyframes spinLogo {
@@ -315,45 +315,6 @@ button:hover {
     font-style: italic;
 }
 
-/* #about::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    z-index: 0;
-  } */
-
-  /* .white-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1;
-    pointer-events: none;
-  }
-   */
-  /* Add a gradient mask at the bottom
-  .white-overlay::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  } */
-  
-  
-
 .welcomeMessage,
 .about-text {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
@@ -390,7 +351,6 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     top: 10%;
     left: 10%;
     gap: 5%;
@@ -403,14 +363,49 @@ button:hover {
     background-color: rgb(93, 109, 109, 0.8);
     height: 85%;
     width: 100%;
+    border-radius: 12px;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;  
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
+    gap: 2%;
+    overflow-x: auto;
+    scroll-padding-left: 1rem;   /* <-- ensures first item aligns */
+    padding-left: 2rem;    
+    padding-right: 2rem;            /* <-- visually aligns first card */
+  
+  }
+
+  #sponsors-headerContainer {
+    background-color: white;
+    position: absolute;
+    top: 50;
+    left: 0; 
+    width: 10vw;
+    height: 12vh;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5%;
-    z-index: 1;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
+
+  #sponsors-headerContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  #sponsors-aboutHeader {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* ------------------ */
+
 
   #contact {
     width:100vw;
@@ -423,15 +418,193 @@ button:hover {
 }
 
 #mailingList {
-    width:40%;
-    background-color: blue;
+    width:30%;
+    background-color: rgb(91, 108, 94, 0.7);
     height:100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 20px, 0, 0, 20px;
     
 }
 
-#contactForm {
-    width:60%;
-    height:100%;
-    background-color: red;
+#mailing-headerContainer {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    left: 0;
+    transform: translateX(-200px);
+    position: absolute;
+    top: -40px; 
+    width: 40%;
+    z-index: 10; 
+    right:0;
+    left: 330px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+  }
+  
+#mailing-headerContainer:hover {
+    transform: translateY(-5px) translateX(-200px);
+  }
+
+#mailing-textContainer {
+    background-color: white;
+    font-style: bold;
 }
 
+#contactForm {
+    width:70%;
+    height:100%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#mailingList, #mailing-text {
+    font-size: 25px;
+}
+
+#mailingList {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+/* -------email form-------------------- */
+#contactForm {
+    justify-content:left;
+    align-items: center;
+    display: flex;
+    background-color: rgb(91, 108, 94, 0.7);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 1.5rem;
+    margin: auto;
+    padding: 2rem;
+    color: black;
+    margin-left: 0;
+  }
+  
+  #nameBox, #emailBox, #messageBox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  label {
+    width: 80px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ffffffcc;
+    font-family: 'MyCustomFont';
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffffaa;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-bottom-color:rgb(115, 120, 107);
+    box-shadow: 0 1px 0 0 rgb(115, 120, 107);
+  }
+  
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  /* Submit button */
+  input[type="submit"] {
+    background-color:rgb(115, 120, 107);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgb(115, 120, 107);
+    transform: translateY(-2px);
+  }
+
+  .messageColumn {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .sendButtonRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+  
+  .sendButtonRow input[type="submit"]:hover {
+    background-color: rgb(115, 120, 107);
+  }
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  label {
+    width: 80px;
+    font-weight: 600;
+    color: #ffffffcc;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    padding: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  /* ✨ Send button beside textarea */
+  .messageRow input[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    margin-top: 60px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .messageRow input[type="submit"]:hover {
+    background-color: #444;
+  }

@@ -11,14 +11,13 @@
     width: 100px;
     border-width: 0px;
     border-color: white;
-    transform: translateX(-100px);
+    position: relative;
+
   }
   
   .sponsor-sponsorLogo:hover {
-    transform: scale(1.05) translateX(-100px);
-    border: 2px solid #238e70;
-    box-shadow: 0 0 15px #1b753c, 0 0 30px #00e0ff;
-    transition: transform 0.7s ease, box-shadow 0.5s ease;
+    transform: scale(1.05) translateY(-10px);
+    transition: transform 0.7s ease;
   }
   
   .sponsor-sponsorLogo img {

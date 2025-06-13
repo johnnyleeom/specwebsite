@@ -6,6 +6,7 @@ import AboutText from "./components/about/AboutText";
 import AboutImg from "./components/about/AboutImg";
 import SponsorLogo from "./components/sponsors/SponsorLogo";
 import SponsorVideoCard from "./components/sponsors/SponsorVideoCard";
+import {ContactUs} from './components/contact/ContactForm';
 
 import "./App.css";
 
@@ -22,29 +23,60 @@ const [currentPage, setCurrentPage] = useState(0);
         <MemberCard
           name="Julie Lee"
           role="President"
-          message="Leading the team"
-          img="../public/Logo/julie.png"
+          img="/logo/julie.png"
         />,
         <MemberCard
-          name="Jiwon"
-          role="President"
-          img="../public/Logo/jiwon.png"
+          name="TBD"
+          role="Vice-President"
+          img="../public/Logo/specLogo.png"
         />,
         <MemberCard
-          name="Charlie"
-          role="Advisor"
+          name="John Lee"
+          role="Software Developer/ Finance Director"
           message="Providing guidance"
           img="../public/Logo/specLogo.png"
         />,
       ],
     },
-    { id: "page2", content: "Page 2: Engineers" },
-    { id: "page3", content: "Page 3: Marketing" },
+    { id: "page2", content: [
+        <MemberCard
+        name="TBD"
+        role="MARKETING DIRECTOR"
+        message="Leading the team"
+        img="../public/Logo/specLogo.png"
+        />,
+        <MemberCard
+          name="TBD"
+          role="EVENTS DIRECTOR"
+          img="../public/Logo/specLogo.png"
+        />,
+        <MemberCard
+          name="TBD"
+          role="SOME"
+          message="Providing guidance"
+          img="../public/Logo/specLogo.png"
+        />,
+      ]},
+    { id: "page3", content: [
+        <MemberCard
+          name="TBD"
+          role="MARKETING DIRECTOR"
+          message="Leading the team"
+          img="../public/Logo/specLogo.png"
+        />,
+        <MemberCard
+          name="TBD"
+          role="SOME"
+          img="../public/Logo/specLogo.png"
+        />,
+        <MemberCard
+          name="TBD"
+          role="SOME"
+          message="Providing guidance"
+          img="../public/Logo/specLogo.png"
+        />,
+      ],},
   ];
-
-
-  const sponsorPages = [];
-
   useEffect(() => {
 
     const handleScroll = () => {
@@ -99,7 +131,10 @@ const [currentPage, setCurrentPage] = useState(0);
                     <p>✅ Want to get fit?</p> 
                     <p>✅ Want to make friends?</p>
                     <p>✅ Want to fulfill your dream UNI life?</p>
-                    <p>✅ something something something?</p>
+                    <p>✅ Students often neglect their health, BUT health is one of the 
+                        most valueable and important aspect of your life! 
+                        Why dont you protect your health by having fun with SPEC?!
+                    </p>
                     <div id = "About-Last-Message">
                     <p >💪Don't Worry! SPEC has your BACK!</p>
                 </div>
@@ -110,7 +145,7 @@ const [currentPage, setCurrentPage] = useState(0);
         <Sections
           id="calendar"
           name="CALENDAR"
-          message="what we are going to do"
+          message="COMING SOON"
         ></Sections>
         <Sections id="team" name="TEAM" message="Meet SPEC Team!">
           <div id="inner-container">
@@ -160,25 +195,47 @@ const [currentPage, setCurrentPage] = useState(0);
                 logo = 'logo/sponsorLogo2.webp'/>
                 <SponsorLogo 
                 website = "https://cobeesliquor.com/"
-                logo = 'logo/sponsorLogo3.jpeg'/>
+                logo = 'logo/sponsorLogo4.png'/>
             </div>
             <div id = "Sponsors-Video">
                 <SponsorVideoCard
-                video = "https://www.youtube.com/embed/wh2bqpN2-xs/"
-                sponsor = "logo/sponsorLogo1.png"
-                eventName = "Pajama Party"/>
+                video = "/logo/tenderbitReels.mp4"
+                image ={"/logo/reels1Thumbnail.png"}
+                />
                 <SponsorVideoCard
-                video = "https://www.youtube.com/embed/BpAaw0PsMdA"/>
+                video ="/logo/soju_spirit_reels.mp4"
+                image={"/logo/reels2Thumbnail.png"}/>
+
                 <SponsorVideoCard
-                video = "https://www.youtube.com/embed/BpAaw0PsMdA"/>
+                video = "/logo/vanmakReels.mp4"
+                image={"/logo/reels3Thumbnail.png"}/>
+                <SponsorVideoCard
+                video = "https://www.youtube.com/embed/BpAaw0PsMdA"
+                image="/logo/specLogoClearBack.png"/>
+                <SponsorVideoCard
+                video = "https://www.youtube.com/embed/BpAaw0PsMdA"
+                image="/logo/specLogoClearBack.png"/>
+                <SponsorVideoCard
+                video = "https://www.youtube.com/embed/BpAaw0PsMdA"
+                image="/logo/specLogoClearBack.png"/>
+                <SponsorVideoCard
+                video = "https://www.youtube.com/embed/BpAaw0PsMdA"
+                image="/logo/specLogoClearBack.png"/>
+                
             </div>
             <div id = "right-Container">
             </div>
         </Sections>
         <Sections id = "contact">
             <div id = "mailingList">
+            <div id = "mailing-headerContainer">
+                <p id="sponsors-aboutHeader"> Mailing List</p>
             </div>
-            <div id = "contactForm"></div>
+                <p id = "mailing-text">Have any questions?<br />Don’t hesitate to reach out <br /> We’d love to hear from you.</p>
+            </div>
+            <div id = "contactForm">
+                <ContactUs></ContactUs>
+            </div>
         </Sections>
       </div>
     </div>
