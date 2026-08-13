@@ -1,68 +1,44 @@
-
 .outter-container {
-    width: 300px;
-    height: 350px;
-    background-color: white;
-    opacity: 1;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    border: 2px solid transparent; 
+  width: 100%;
+  min-height: 430px;
+  padding: 16px 16px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  background: rgba(255,255,255,.74);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(23,26,23,.12);
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(26,32,26,.07);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-
-.outter-container:hover {
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9); 
-    border-color: rgba(255, 255, 255, 0.9); 
-    transform: scale(1.05); 
-
-}
-
-@keyframes glow {
-    0% {
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-        border-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
-    }
-    100% {
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
-    }
-}
-
-
-.outer-container:hover {
-    animation: glow 1s infinite alternate; 
-    font-size: 30px;
-}
-
+.outter-container:hover { transform: translateY(-6px); box-shadow: 0 24px 55px rgba(26,32,26,.12); }
 .outter-container img {
-    width: 75%;
-    height: 70%;
-    object-fit: cover;
-    margin-bottom: 5px;
-    border-radius: 20px;
-    margin-top: 20px;
+  width: 100%;
+  height: 310px;
+  margin: 0 0 22px;
+  object-fit: cover;
+  border-radius: 17px;
+  background: rgba(236,238,232,.78);
 }
-
 #name {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 20px;
+  margin: 0 7px 7px;
+  color: #171a17;
+  font-family: 'Libre', Georgia, serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
 }
-
 #role {
-    margin-top: 0;
-
+  margin: 0 7px;
+  color: #5c645a;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  line-height: 1.5;
 }
