@@ -43,15 +43,22 @@ function App() {
   ];
 
   useEffect(() => {
+    let animationFrame;
+
     const handleScroll = () => {
+      cancelAnimationFrame(animationFrame);
       animationFrame = requestAnimationFrame(() => {
         const scrollY = window.scrollY;
         const newSpeed = Math.max(5, 45 - scrollY / 100);
         setSpeed(newSpeed);
       });
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const nextPage = () => setCurrentPage((prev) => (prev + 1) % teamPages.length);
@@ -168,10 +175,6 @@ function App() {
               <SponsorVideoCard video="/logo/tenderbitReels.mp4" image="/logo/reels1Thumbnail.png" />
               <SponsorVideoCard video="/logo/soju_spirit_reels.mp4" image="/logo/reels2Thumbnail.png" />
               <SponsorVideoCard video="/logo/vanmakReels.mp4" image="/logo/reels3Thumbnail.png" />
-              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
-              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
-              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
-              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
             </div>
           </div>
         </Sections>
