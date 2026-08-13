@@ -42,7 +42,6 @@ function App() {
     },
   ];
 
-  // Keep the existing spinning logo scroll-speed behavior unchanged.
   useEffect(() => {
     const handleScroll = () => {
       animationFrame = requestAnimationFrame(() => {
@@ -71,12 +70,9 @@ function App() {
       <main className="content-wrapper">
         <section id="home" className="mainPage">
           <div className="hero-content">
-            <span className="eyebrow">SPORTS · COMMUNITY · UBC</span>
+            <span className="eyebrow">UBC SPORTS & ENHANCEMENT CLUB</span>
             <a className="welcomeHeader" href="#about">SPEC</a>
-            <h1 className="hero-title">Move together.<br />Make university count.</h1>
-            <p className="welcomeMessage">
-              A community built around staying active, meeting people, and making memories beyond the classroom.
-            </p>
+            <p className="welcomeMessage">Stay active. Meet people. Make university memorable.</p>
             <div className="hero-actions">
               <a
                 className="primary-action"
@@ -89,7 +85,6 @@ function App() {
               <a className="secondary-action" href="#about">Explore SPEC ↓</a>
             </div>
           </div>
-          <div className="hero-note">SPORTS & ENHANCEMENT CLUB</div>
         </section>
 
         <Sections id="about" className="about" ref={aboutSectionRef}>
@@ -173,6 +168,10 @@ function App() {
               <SponsorVideoCard video="/logo/tenderbitReels.mp4" image="/logo/reels1Thumbnail.png" />
               <SponsorVideoCard video="/logo/soju_spirit_reels.mp4" image="/logo/reels2Thumbnail.png" />
               <SponsorVideoCard video="/logo/vanmakReels.mp4" image="/logo/reels3Thumbnail.png" />
+              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
+              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
+              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
+              <SponsorVideoCard video="https://www.youtube.com/embed/BpAaw0PsMdA" image="/logo/specLogoClearBack.png" />
             </div>
           </div>
         </Sections>
